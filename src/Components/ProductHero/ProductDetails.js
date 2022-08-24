@@ -1,9 +1,31 @@
-import React from 'react'
+import React,{useState} from 'react'
 import wishlist from "../../images/wishlist.png";
 import cartImage from "../../images/cartImage.png";
 import { FaSearch } from "react-icons/fa";
 import './ProductHero.css'
-const ProductDetails = ({item,sideImage,count,setCount,handleSelectedImage}) => {
+const ProductDetails = ({totalPrice,setTotalPrice,item,sideImage,handleSelectedImage}) => {
+  
+  const [counter, setCounter] = useState(1);
+
+  const incrementCounter = () => {
+    let count = counter + 1;
+    setCounter(counter + 1);
+    setTotalPrice(count*item.price);
+  };
+
+  let decrementCounter = () => {
+    let count = counter;
+    if (counter > 1) {
+      count = count-1;
+        setCounter(counter - 1);
+    }
+    else {
+        setCounter(1);
+    }
+    setTotalPrice(count*item.price);
+    
+}
+
   return (
     <div className=" p-5">
           <h2 className="content fontWeightMedium QuestrialFont NoLetterSpacing ">
@@ -39,7 +61,7 @@ const ProductDetails = ({item,sideImage,count,setCount,handleSelectedImage}) => 
             <p className="price PoppinsFont NoLetterSpacing fontWeightMedium">NRS.200</p>
             <div className="d-flex align-items-center   justify-content-between">
               <div className="priceWithBadge">
-                <h3 className="actualPrice PoppinsFont">NRS.{item.price}</h3>
+                <h3 className="actualPrice PoppinsFont">NRS.{totalPrice}</h3>
                 <div className="d-flex align-items-center justify-content-between">
                   <span className="offBadge PoppinsFont m-2">10% off</span>
                   <span className="m-2 savePrice PoppinsFont fontWeightMedium NoLetterSpacing">You save: NRS. 90.05</span>
@@ -52,19 +74,19 @@ const ProductDetails = ({item,sideImage,count,setCount,handleSelectedImage}) => 
                     <div className="d-flex">
                       <button className="cartButton m-2">
                         <p className="cartButtonText"
-                          onClick={() => {
-                            setCount(count > 1 ? count - 1 : count);
-                          }}
+                          onClick={
+                            decrementCounter
+                          }
                         >
                           -
                         </p>
                       </button>
-                      <p className="ml-2 mr-2  numberOfQuantity">{count}</p>
+                      <p className="ml-2 mr-2  numberOfQuantity">{counter}</p>
                       <button
                         className="cartButton m-2"
-                        onClick={() => {
-                          setCount(count + 1);
-                        }}
+                        onClick={
+                          incrementCounter
+                        }
                       >
                         <p className="cartButtonText">+</p>
                       </button>

@@ -70,11 +70,11 @@ const Footer = () => {
                 <li className="list-group-item listItems bg-transparent border-0 p-0 mb-2">
                   <span className="d-flex justify-content-around socialMedia mb-2"><FaInstagram/>  <FaTwitter/>  <FaFacebook/>  <FaGoogle/></span>
                 </li>
-                <li className="list-group-item listItems bg-transparent border-0 p-0 mb-2">
-                  <p className="mb-1">SOON ON:</p>
+                <li className="mt-5 list-group-item listItems bg-transparent border-0 p-0 mb-2">
+                  <p className=" ">SOON ON:</p>
                   <div className="d-flex flex-column">
-                  <img className="mb-3" src={googlePlay} />
-                  <img src={appStore} />
+                  <img className="mb-3 appImage" src={googlePlay} />
+                  <img className="appImage" src={appStore} />
                   </div>
                 </li>
               </ul>

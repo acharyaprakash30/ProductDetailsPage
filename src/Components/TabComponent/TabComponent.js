@@ -5,7 +5,6 @@ import Accordion from 'react-bootstrap/Accordion';
 import './TabStyle.css'
 
 const TabComponent = ({ data }) => {
-  console.log("data from tab", data);
   return (
     <>
     <div className="container mb-5">

@@ -17,7 +17,7 @@ import ProductDetails from './Components/ProductHero/ProductDetails.js'
 import axios from "axios";
 
 function App() {
-  const [count, setCount] = useState(1);
+  
   const [item, setItem] = useState("");
   const [mainImage, setMainImage] = useState("");
   const [sideImage, setSideImage] = useState([
@@ -37,6 +37,7 @@ function App() {
       selected: false,
     },
   ]);
+  const [totalPrice,setTotalPrice] = useState(0);
 
   const handbags = [
     { name: handbag1 },
@@ -45,6 +46,8 @@ function App() {
     { name: handbag6 },
     { name: handbag7 },
   ];
+
+
 
   useEffect(() => {
 
@@ -57,6 +60,7 @@ function App() {
     axios.get("https://fakestoreapi.com/products/1").then((data) => {
       setItem(data.data);
       setMainImage(data.data.image);
+      setTotalPrice(data.data.price);
       setSideImage((oldArray) => [
         { id: 1, name: data.data.image, selected: true },
         ...oldArray,
@@ -80,7 +84,7 @@ function App() {
     <>
       <div className="d-flex m-5">
       <ProductImagesLeft handbags={handbags} mainImage={mainImage} setMainImage={setMainImage} />
-        <ProductDetails count={count} setCount={setCount} item={item} sideImage={sideImage} handleSelectedImage={handleSelectedImage} />
+        <ProductDetails  totalPrice={totalPrice} setTotalPrice={setTotalPrice}  item={item} sideImage={sideImage} handleSelectedImage={handleSelectedImage} />
       </div>
       <TabComponent data = {item} />
       <Footer />
