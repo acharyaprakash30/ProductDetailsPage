@@ -1,0 +1,38 @@
+.footer{
+    background-color: #181818;
+    color: #FFFFFF;
+}
+.headings{
+font-weight: 600;
+font-size: 20px;
+line-height: 30px;
+}
+.socialMedia{
+    color:#ED8F03;
+}
+
+.listItems{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #FFFFFF !important;
+}
+.listItems:hover{
+    color: #ED8F03 !important;
+    cursor: pointer;
+}
+.subscribe{
+height: 57px;
+width: 445px;
+border-radius: 5px;
+}
+.subscribeText{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}

@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  top: 0;
+  left: 0;
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.inputForm{
+background-color: #DCDCDC !important;
+height: 61px;
+}
+.form-group{
+  width: 491px;
+}
+.form-control:focus {
+  border-color: none !important;
+  box-shadow: none !important;
+}
+.accordion-button:focus {
+  border-color: none !important;
+  box-shadow: none !important;
+}
+.QuestrialFont{
+  font-family: "Questrial";
+}
+.PoppinsFont{
+  font-family: "Poppins";
+}
+.fontWeightMedium{
+  font-weight: 400;
+}
+.NoLetterSpacing{
+  letter-spacing: 0em;
+}
+/* .nav-tabs .nav-link.active{
+  border-color: transparent  !important;
+} */
+.nav-link{
+  color: #1E1E1E !important;
+  font-weight: 4oo  !important;
+}
+.nav-link.active{
+  border-bottom: 2px solid #ED8F03 !important;
+  color:#ED8F03 !important;
+}
+.nav-tabs:hover .nav-link.active:hover{
+  border-color: transparent  !important;
+  border-bottom: 2px solid #ED8F03 !important;
+  color:#ED8F03 !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
+
+
+
+
+
