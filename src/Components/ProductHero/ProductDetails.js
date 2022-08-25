@@ -10,7 +10,9 @@ const ProductDetails = ({totalPrice,setTotalPrice,item,sideImage,handleSelectedI
   const incrementCounter = () => {
     let count = counter + 1;
     setCounter(counter + 1);
-    setTotalPrice(count*item.price);
+    let subtotal = count*item.price;
+    subtotal = subtotal.toFixed(2);
+    setTotalPrice(subtotal);
   };
 
   let decrementCounter = () => {
@@ -22,8 +24,23 @@ const ProductDetails = ({totalPrice,setTotalPrice,item,sideImage,handleSelectedI
     else {
         setCounter(1);
     }
-    setTotalPrice(count*item.price);
+    let subtotal = count*item.price;
+    subtotal = subtotal.toFixed(2);
+    setTotalPrice(subtotal);
     
+}
+const handleDiscount = (event) =>{
+  let data = event.target.value;
+  let subtotal = counter*item.price - data;
+  subtotal = subtotal.toFixed(2);
+  if(data > counter*item.price){
+    event.target.value = 0;
+    setTotalPrice(counter*item.price);
+  }
+  else{
+    setTotalPrice(subtotal);
+  }
+
 }
 
   return (
@@ -92,15 +109,18 @@ const ProductDetails = ({totalPrice,setTotalPrice,item,sideImage,handleSelectedI
                       </button>
                     </div>
                   </div>
-                  <button className="carttbtn ml-2 d-flex  text-center justify-content-around align-items-center">
-                    <img src={cartImage} className="cartimg" alt="cartimg" />
-                    <span className="addCart PoppinsFont">Add to cart</span>
-                  </button>
+                  <div className="form-group has-search discountInput">
+              <input type="text" onChange={(e)=>handleDiscount(e)} className="form-control discount" placeholder="Discount Amount"/>
+        </div>                
                 </div>
               </div>
             </div>
+            <button className="carttbtn  d-flex text-center float-left align-items-center">
+                    <img src={cartImage} className="cartimg" alt="cartimg" />
+                    <span className="addCart PoppinsFont">Add to cart</span>
+                </button>
           </div>
-          <hr className="w-100 mt-3" />
+          <hr className="cartHr" />
           <h2 className="aboutItem PoppinsFont">About this item</h2>
           <ul className="listItemsText PoppinsFont fontWeightMedium">
             <li>Create a laid back vibe in your home with our twist on the classic papasan chair design</li>

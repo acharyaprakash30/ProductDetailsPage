@@ -123,7 +123,6 @@
   background: #ed8f03;
   border: 2px solid #ed8f03;
   border: none;
-  margin: auto;
   padding: 10px;
 }
 
@@ -174,4 +173,16 @@
 }
 .searchIcon {
   margin-left: 20px;
+}
+.cartHr{
+  
+  margin-top: 65px;
+
+}
+.discountInput{
+  width: 100%;
+  margin-top: 7px;
+}
+.discount{
+  height: 44px;
 }
